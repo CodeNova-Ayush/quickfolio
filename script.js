@@ -9,7 +9,7 @@ let education = [
     { degree: "B.Tech Computer Science", school: "University of Tech", startYear: "2020", endYear: "2024" }
 ];
 let profilePhoto = "";
-let currentTheme = "minimal";
+let currentTheme = "dark";
 
 function updatePreview() {
     let name = document.getElementById('input-name').value;

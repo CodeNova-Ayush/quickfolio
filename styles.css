@@ -531,7 +531,7 @@ textarea:focus {
 .theme-dark .skill-tag {
     background: #1E1E1E;
     border: 1px solid #333;
-    color: mediumturquoise;
+    color: white;
 }
 
 .theme-dark .card {
