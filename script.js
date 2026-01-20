@@ -229,7 +229,7 @@ function handlePhotoUpload(event) {
 }
 
 function downloadPortfolio() {
-    let cssContent = document.querySelector('link[href="styles.css"]').sheet;
+    // Fetch the styles directly
     fetch('styles.css')
         .then(response => response.text())
         .then(css => {
