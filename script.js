@@ -262,6 +262,8 @@ window.onload = function () {
     let themeBtns = document.querySelectorAll('.theme-btn');
     themeBtns.forEach(btn => {
         btn.onclick = function () {
+            themeBtns.forEach(b => b.classList.remove('active'));
+            this.classList.add('active');
             changeTheme(this.dataset.theme);
         }
     });
