@@ -235,6 +235,7 @@ function downloadPortfolio() {
         .then(css => {
             let fullHtml = '<!DOCTYPE html><html><head><title>My Portfolio</title>';
             fullHtml += '<style>' + css + '</style>';
+            fullHtml += '<style>body { height: auto; overflow: auto; }</style>';
             fullHtml += '</head><body class="theme-' + currentTheme + '">';
             fullHtml += document.getElementById('preview-container').innerHTML;
             fullHtml += '</body></html>';
