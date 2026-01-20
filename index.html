@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QuickFolio - Build Your Portfolio</title>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@300;400;500;700&family=Playfair+Display:wght@400;700&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+    <div id="landing-page" class="landing-container">
+        <div class="landing-content">
+            <div class="landing-logo">
+                <i class="fa-solid fa-layer-group"></i> QuickFolio
+            </div>
+            <h1>Build Your Professional Portfolio in Minutes</h1>
+            <p>No coding required. Real-time preview. Export to HTML.</p>
+            <button id="get-started-btn" class="btn-cta">Get Started <i class="fa-solid fa-arrow-right"></i></button>
+        </div>
+    </div>
+
+    <div id="app-container" class="app-container hidden">
+        <aside class="editor-sidebar">
+            <div class="sidebar-header">
+                <div class="logo">
+                    <i class="fa-solid fa-layer-group"></i>
+                    <span>QuickFolio</span>
+                </div>
+                <div class="action-buttons">
+                    <button id="downloadBtn" class="btn-primary-sm" title="Download Portfolio">
+                        <i class="fa-solid fa-download"></i> Export
+                    </button>
+                </div>
+            </div>
+
+            <div class="editor-content">
+
+                <div class="form-section expanded">
+                    <div class="section-header">
+                        <h3><i class="fa-regular fa-user"></i> Personal Details</h3>
+                        <i class="fa-solid fa-chevron-down toggle-icon"></i>
+                    </div>
+                    <div class="section-body">
+                        <div class="form-group">
+                            <label>Full Name</label>
+                            <input type="text" id="input-name" placeholder="e.g. Alex Morgan" value="Alex Morgan">
+                        </div>
+                        <div class="form-group">
+                            <label>Professional Title</label>
+                            <input type="text" id="input-role" placeholder="e.g. Full Stack Developer"
+                                value="Full Stack Developer">
+                        </div>
+                        <div class="form-group">
+                            <label>About Me</label>
+                            <textarea id="input-about" rows="3"
+                                placeholder="Brief bio...">Passionate developer with a knack for building scalable web applications and intuitive user experiences.</textarea>
+                        </div>
+                        <div class="form-group">
+                            <label>Profile Photo</label>
+                            <div class="file-upload-wrapper">
+                                <input type="file" id="input-photo" accept="image/*">
+                                <span class="file-custom">Choose Image</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-section">
+                    <div class="section-header">
+                        <h3><i class="fa-solid fa-share-nodes"></i> Social Links</h3>
+                        <i class="fa-solid fa-chevron-down toggle-icon"></i>
+                    </div>
+                    <div class="section-body">
+                        <div class="form-group">
+                            <label><i class="fa-brands fa-github"></i> GitHub URL</label>
+                            <input type="text" id="input-github" placeholder="https://github.com/..."
+                                value="https://github.com/alexmorgan">
+                        </div>
+                        <div class="form-group">
+                            <label><i class="fa-brands fa-linkedin"></i> LinkedIn URL</label>
+                            <input type="text" id="input-linkedin" placeholder="https://linkedin.com/in/..."
+                                value="https://linkedin.com/in/alexmorgan">
+                        </div>
+                        <div class="form-group">
+                            <label><i class="fa-regular fa-envelope"></i> Email Address</label>
+                            <input type="email" id="input-email" placeholder="alex@example.com"
+                                value="alex@example.com">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-section">
+                    <div class="section-header">
+                        <h3><i class="fa-solid fa-bolt"></i> Skills</h3>
+                        <i class="fa-solid fa-chevron-down toggle-icon"></i>
+                    </div>
+                    <div class="section-body">
+                        <div class="skills-input-container">
+                            <input type="text" id="skill-input" placeholder="Add a skill (Press Enter)">
+                            <button id="add-skill-btn" type="button"><i class="fa-solid fa-plus"></i></button>
+                        </div>
+                        <div id="skills-list" class="tags-container">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-section">
+                    <div class="section-header">
+                        <h3><i class="fa-solid fa-code"></i> Projects</h3>
+                        <i class="fa-solid fa-chevron-down toggle-icon"></i>
+                    </div>
+                    <div class="section-body">
+                        <div id="projects-list">
+                        </div>
+                        <button id="add-project-btn" type="button" class="btn-secondary full-width">
+                            <i class="fa-solid fa-plus"></i> Add Project
+                        </button>
+                    </div>
+                </div>
+
+                <div class="form-section">
+                    <div class="section-header">
+                        <h3><i class="fa-solid fa-briefcase"></i> Experience</h3>
+                        <i class="fa-solid fa-chevron-down toggle-icon"></i>
+                    </div>
+                    <div class="section-body">
+                        <div id="experience-list">
+                        </div>
+                        <button id="add-exp-btn" type="button" class="btn-secondary full-width">
+                            <i class="fa-solid fa-plus"></i> Add Experience
+                        </button>
+                    </div>
+                </div>
+
+                <div class="form-section">
+                    <div class="section-header">
+                        <h3><i class="fa-solid fa-graduation-cap"></i> Education</h3>
+                        <i class="fa-solid fa-chevron-down toggle-icon"></i>
+                    </div>
+                    <div class="section-body">
+                        <div id="education-list">
+                        </div>
+                        <button id="add-edu-btn" type="button" class="btn-secondary full-width">
+                            <i class="fa-solid fa-plus"></i> Add Education
+                        </button>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="sidebar-footer">
+                <p>Built with <i class="fa-solid fa-heart"></i> by QuickFolio</p>
+            </div>
+        </aside>
+
+        <main class="preview-area">
+            <div class="toolbar">
+                <div class="theme-switcher">
+                    <span class="label">Theme:</span>
+                    <button class="theme-btn active" data-theme="minimal">Minimal</button>
+                    <button class="theme-btn" data-theme="dark">Dark</button>
+                    <button class="theme-btn" data-theme="creative">Creative</button>
+                </div>
+                <div class="view-mode">
+                    <span class="label">Preview</span>
+                </div>
+            </div>
+
+            <div class="preview-wrapper">
+                <div id="preview-container" class="portfolio-preview theme-minimal">
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="script.js?v=4"></script>
+</body>
+
+</html>
