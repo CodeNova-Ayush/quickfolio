@@ -46,4 +46,4 @@ To add a new theme, simply add a new class in `styles.css` (e.g., `.theme-retro`
 
 ---
 *Built for excellence.*
-# quickfolio
+# Quickfolio
